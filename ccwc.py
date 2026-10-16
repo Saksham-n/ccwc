@@ -1,21 +1,18 @@
 import sys
 
-flag = sys.argv[1]
-filename = sys.argv[2]
+if len(sys.argv) == 2:
+    filename = sys.argv[1]
+    
+    with open(filename, 'rb') as f:
+        content = f.read()
+        
+    line_count = content.count(b'\n')
+    word_count = len(content.split())
+    byte_count = len(content)
+    
+    print(f"  {line_count}  {word_count}  {byte_count} {filename}")
 
-if flag == '-c':
-    with open(filename, 'rb') as f:
-        byte_count = len(f.read())
-    print(f"  {byte_count} {filename}")
-elif flag == '-l':
-    with open(filename, 'rb') as f:
-        line_count = f.read().count(b'\n')
-    print(f"  {line_count} {filename}")
-elif flag == '-w':
-    with open(filename, 'rb') as f:
-        word_count = len(f.read().split())
-    print(f"  {word_count} {filename}")
-elif flag == '-m':
-    with open(filename, 'rb') as f:
-        char_count = len(f.read().decode('utf-8'))
-    print(f"  {char_count} {filename}")
+elif len(sys.argv) == 3:
+    flag = sys.argv[1]
+    filename = sys.argv[2]
+    
