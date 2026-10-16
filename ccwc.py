@@ -9,4 +9,10 @@ elif flag == '-l':
     with open(filename, 'rb') as f:
         line_count = f.read().count(b'\n')
     print(f"  {line_count} {filename}")
+elif flag=='-w':
+    with open(filename,'rb') as f:
+        word_count=len(f.read().split())
+    print(f"{word_count} {filename}")
+    
+        
 
