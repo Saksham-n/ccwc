@@ -87,7 +87,4 @@ bash test.sh
 * Command line arguments are separated into flags and targets.
 * When targets are absent, the application reads directly from `sys.stdin.buffer`, enabling Unix pipeline composition (`cat ... | ccwc`).
 
----
 
-## 📄 License
-MIT License.
